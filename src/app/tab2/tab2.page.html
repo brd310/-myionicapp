@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Guess a number
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,48 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Guess a number</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div class="container">
+    <h3>Je pense a un entre 0 a 100</h3>
+     
+    <ion-input [(ngModel)]="userNumber" type="text" placeholder="Entrez un nombre"></ion-input>
+
+
+    <p>nombre de tentative : <span>{{nombreTentative}}</span></p>
+    
+    <div *ngIf="etat == HIGH">
+      <ion-text color="secondary">
+        <h1>TROP GRAND !</h1>
+      </ion-text>
+    </div>
+
+    <div *ngIf="etat == LOW">
+      <ion-text color="secondary">
+        <h1>TROP PETIT !</h1>
+      </ion-text>
+    </div>  
+    
+    <div *ngIf="etat == WIN">
+      <ion-text color="secondary">
+        <h1>C'EST GAGNÉ !</h1>
+      </ion-text>
+    </div>
+
+  </div>
+
+  <ion-fab *ngIf="etat !=INITIAL" vertical="bottom" horizontal="start" slot="fixed">
+    <ion-button (click)="start()" color="warning">Lancer</ion-button>
+  </ion-fab>
+
+  <ion-fab *ngIf="etat != INITIAL" vertical="bottom" horizontal="center" slot="fixed">
+    <ion-button (click)="reset()" color="danger">Restart</ion-button>
+  </ion-fab>
+
+  <ion-fab *ngIf="etat != INITIAL" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-button (click)="valid()" color="success">Valider</ion-button>
+  </ion-fab>
+ 
 </ion-content>

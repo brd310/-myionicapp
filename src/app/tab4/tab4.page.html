@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Conversion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="titre">
+  My Convertisseur
+</div>
+
+<div class="box">
+
+  <ion-list>
+    <ion-item class="txt">
+       <label>Longueur</label>
+       <select name="" id="">
+         <option value="">Mètre</option>
+         <option value="">Centimètre</option>
+         <option value="">Mile</option>
+         <option value="">Pouce</option>
+       </select>
+    </ion-item>
+  
+    <ion-item class="txt">
+      <label>Température</label>
+      <select name="" id="">
+        <option value="">Celsius</option>
+        <option value="">Fahrenheit</option>
+        <option value="">Kelvin</option>
+      </select>
+    </ion-item>
+  </ion-list>
+
+  <ion-input placeholder="entrez votre convertion"></ion-input>
+  <p>Le resultat est : {{ resultat }} </p> 
+</div>
+
+</ion-content>

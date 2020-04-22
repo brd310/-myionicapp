@@ -7,6 +7,19 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+  //propriétés
+  compteur: number=0;
+
+
   constructor() {}
+
+  //méthodes
+  inc() {
+    this.compteur += 1;
+  }
+
+  dec() {
+    this.compteur -= 1;
+  }
 
 }
