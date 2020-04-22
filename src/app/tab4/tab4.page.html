@@ -13,26 +13,34 @@
 
   <ion-list>
     <ion-item class="txt">
-       <label>Longueur</label>
-       <select name="" id="">
-         <option value="">Mètre</option>
-         <option value="">Centimètre</option>
-         <option value="">Mile</option>
-         <option value="">Pouce</option>
-       </select>
+       <label>Longueur à convertir</label>
+        <ion-select [(ngModel)]="unite1">
+          <ion-select-option value="metre">Mètre</ion-select-option>
+          <ion-select-option value="centimetre">Centimètre</ion-select-option>
+          <ion-select-option value="mile">Mile</ion-select-option>
+          <ion-select-option value="pouce">Pouce</ion-select-option>
+        </ion-select>
     </ion-item>
-  
-    <ion-item class="txt">
-      <label>Température</label>
-      <select name="" id="">
-        <option value="">Celsius</option>
-        <option value="">Fahrenheit</option>
-        <option value="">Kelvin</option>
-      </select>
-    </ion-item>
-  </ion-list>
 
-  <ion-input placeholder="entrez votre convertion"></ion-input>
+  
+    <ion-input [(ngModel)]="userNumber" placeholder="entrez votre convertion"></ion-input>
+    
+    <ion-item class="txt">
+      <label>Longueur convertie</label>
+      <ion-select [(ngModel)]="unite2">
+        <ion-select-option value="metre">Mètre</ion-select-option>
+        <ion-select-option value="centimetre">Centimètre</ion-select-option>
+        <ion-select-option value="mile">Mile</ion-select-option>
+        <ion-select-option value="pouce">Pouce</ion-select-option>
+      </ion-select>
+   </ion-item>
+  
+  </ion-list>
+  
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-button (click)="convert()">Convertir</ion-button>
+  </ion-fab>
+ 
   <p>Le resultat est : {{ resultat }} </p> 
 </div>
 
