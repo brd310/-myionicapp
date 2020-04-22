@@ -8,9 +8,15 @@
 <div class="titre">
   My Convertisseur
 </div>
+<ion-fab vertical="top" horizontal="start" slot="fixed">
+<ion-button shape="round" fill="outline" (click)="affichageTemp()">Conversion température</ion-button>
+</ion-fab>
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+<ion-button shape="round"fill="outline" (click)="affichageLong()">Conversion longueur</ion-button>
+</ion-fab>
 
 
-<div class="container">
+<div class="container" *ngIf="start == 'temp'">
   <ion-item>
     <ion-input placeholder="Votre temperature" [(ngModel)]="tempSaisi"></ion-input>
     <ion-select interface="popover" [(ngModel)]="unite">
@@ -19,7 +25,7 @@
       <ion-select-option value="kelvin">Kelvin</ion-select-option>
     </ion-select>
   </ion-item>
-  <ion-button expand="block" fill="outline" (click)="convTemp()">Conversion</ion-button>
+  <ion-button expand="block" fill="outline" (click)="convTemp()">Calcule</ion-button>
   <ion-item>
     <ion-input>{{ reuls }}</ion-input>
     <ion-select interface="popover" [(ngModel)]="uniteConv">
@@ -28,6 +34,11 @@
       <ion-select-option value="kelvinC">Kelvin</ion-select-option>
     </ion-select>
   </ion-item>
+</div>
+
+<div class="container" *ngIf="start == 'long'">
+  <h1>Conversion longeur</h1>
+  <select name="" id="">test</select>
 </div>
 
 </ion-content>

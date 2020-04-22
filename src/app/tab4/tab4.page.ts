@@ -7,24 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab4Page implements OnInit {
 
-  
-
   unite: any;
   uniteConv: any;
   tempSaisi: number;
   resultatC: number;
-
   reuls: number; 
   
-
-  // c= (f-32)/1,8
-  // f= c*1.8 + 32
-
+  start: string;
+  
   constructor() { }
 
   ngOnInit() {
   }
 
+  affichageTemp(){
+    this.start = 'temp';
+  }
+
+  affichageLong(){
+    this.start = 'long';
+  }
+  
   
   convTemp(){
     if(this.tempSaisi){
