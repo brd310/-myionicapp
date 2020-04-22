@@ -9,31 +9,25 @@
   My Convertisseur
 </div>
 
-<div class="box">
 
-  <ion-list>
-    <ion-item class="txt">
-       <label>Longueur</label>
-       <select name="" id="">
-         <option value="">Mètre</option>
-         <option value="">Centimètre</option>
-         <option value="">Mile</option>
-         <option value="">Pouce</option>
-       </select>
-    </ion-item>
-  
-    <ion-item class="txt">
-      <label>Température</label>
-      <select name="" id="">
-        <option value="">Celsius</option>
-        <option value="">Fahrenheit</option>
-        <option value="">Kelvin</option>
-      </select>
-    </ion-item>
-  </ion-list>
-
-  <ion-input placeholder="entrez votre convertion"></ion-input>
-  <p>Le resultat est : {{ resultat }} </p> 
+<div class="container">
+  <ion-item>
+    <ion-input placeholder="Votre temperature" [(ngModel)]="tempSaisi"></ion-input>
+    <ion-select interface="popover" [(ngModel)]="unite">
+      <ion-select-option value="celsius" >Celsius</ion-select-option>
+      <ion-select-option value="fahren">Fahrenheit</ion-select-option>
+      <ion-select-option value="kelvin">Kelvin</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button expand="block" fill="outline" (click)="convTemp()">Conversion</ion-button>
+  <ion-item>
+    <ion-input>{{ reuls }}</ion-input>
+    <ion-select interface="popover" [(ngModel)]="uniteConv">
+      <ion-select-option value="celciusC" (ionChange)="conFtoC()">Celsius</ion-select-option>
+      <ion-select-option value="fahrenC">Fahrenheit</ion-select-option>
+      <ion-select-option value="kelvinC">Kelvin</ion-select-option>
+    </ion-select>
+  </ion-item>
 </div>
 
 </ion-content>
