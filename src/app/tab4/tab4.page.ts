@@ -73,8 +73,10 @@ export class Tab4Page implements OnInit {
       }
       if(this.unite1 == 'pouce' && this.unite2 == 'centimetre') {
         this.resultat = this.userNumber * 2.54;
-  
-  convTemp(){
+      }
+    }
+  }
+  convTemp() {
     if(this.tempSaisi){
 
       if(this.unite == 'celsius' && this.uniteConv == 'fahrenC'){
